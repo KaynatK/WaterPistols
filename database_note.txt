@@ -1,0 +1,21 @@
+CREATE DATABASE login_user;
+
+CREATE USER 'kkhan'@'localhost' IDENTIFIED BY 'qwerty';
+
+GRANT ALL ON login_user.* TO 'kkhan'@'localhost';
+
+
+
+USE login_user; 
+
+CREATE TABLE users (
+   user_id INTEGER NOT NULL
+     AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR(128),
+   email VARCHAR(128),
+   password VARCHAR(128),
+   INDEX(email)
+) ENGINE=InnoDB CHARSET=utf8;
+
+INSERT INTO users (name,email,password) VALUES ('Andy','andy@andy.com','12345ab');
+INSERT INTO users (name,email,password) VALUES ('Kaynat','kp@kazalove.com', '2401ab');
